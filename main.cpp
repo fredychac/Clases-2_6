@@ -6,9 +6,12 @@
  // Authors:         ALFREDO CHACON
  // Updated:         04/2021
  //Nota:  			EL SIGUIENTE CODIGO MUESTRA EL USO DE CLASES
+ //           SE USAN ARREGLOS DE CARACTERES
 ************************************************************************/
 #include <iostream>
 #include <stdlib.h>
+#include <string.h>
+#include <cstring>
 using namespace std;
 
 class Mascota{
@@ -136,9 +139,19 @@ int Mascota::n_mascotas=0;
 /************************************************
    MAIN
 ************************************************/
+
 int main(int argc, char** argv) {
-	
-	Mascota m1=Mascota("Xolotl","perro","Macho",2);
+	string na="xolotl";
+  string nes="Perro";
+  string nse="Macho";
+  char nastr[na.size() + 1];
+  strcpy(nastr, na.c_str()); 
+  char esstr[nes.size() + 1];
+  strcpy(esstr, nes.c_str()); 
+   char sesstr[nse.size() + 1];
+  strcpy(sesstr, nse.c_str());
+
+	Mascota m1=Mascota(nastr,esstr,sesstr,2);
 	//m1.name="Siegfried";		//incorrecto
 	cout<<"De nombre: "<<m1.getName()<<endl;
 	Mascota m2("Zeus","gato","Macho",5);
